@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockupAPI", "MockupAPI\MockupAPI.csproj", "{5EB5A81A-12C5-4772-A5F5-702B2A3E0530}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockupAPI.Services", "MockupAPI.Services\MockupAPI.Services.csproj", "{DFC5B7FD-D120-4D57-804E-EE537333F135}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{5EB5A81A-12C5-4772-A5F5-702B2A3E0530}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EB5A81A-12C5-4772-A5F5-702B2A3E0530}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EB5A81A-12C5-4772-A5F5-702B2A3E0530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFC5B7FD-D120-4D57-804E-EE537333F135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC5B7FD-D120-4D57-804E-EE537333F135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC5B7FD-D120-4D57-804E-EE537333F135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC5B7FD-D120-4D57-804E-EE537333F135}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
