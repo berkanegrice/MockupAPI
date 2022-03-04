@@ -1,11 +1,6 @@
 #nullable enable
-using System.Net;
-using System.Net.Http;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using MockupAPI.Services;
-using static System.Enum;
 
 namespace MockupAPI.Controllers
 {
@@ -19,11 +14,12 @@ namespace MockupAPI.Controllers
         
         [Route("PostMethod")]
         [HttpPost]
-        public object CallPostMethod(string methodName, string? output, int? httpReturn)
-        {
+        public object CallPostMethod(string? methodName, string? output, int? httpReturn)
+            => _postMethod.MethodIsCalled(output, httpReturn);    
 
-            return _postMethod.CallPostMethod(output, httpReturn);
-            
-        }
+        [Route("GetMethod")]
+        [HttpGet]
+        public object CallGetMethod(string? methodName, string? output, int? httpReturn)
+            => _postMethod.MethodIsCalled(output, httpReturn);    
     }
 }
