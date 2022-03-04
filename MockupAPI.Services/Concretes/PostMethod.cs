@@ -5,7 +5,7 @@ using System.Net.Http;
 
 namespace MockupAPI.Services
 {
-    public class PostMethod : IPostMethod
+    public class Method : IMethod
     {
         public object MethodIsCalled(string? output, int? httpReturn){
 
@@ -37,5 +37,8 @@ namespace MockupAPI.Services
             // TODO : Add some logic to return coming JSON object.
             return output;
         }
+
+
+
     }
 }
