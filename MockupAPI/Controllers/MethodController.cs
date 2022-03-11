@@ -6,20 +6,20 @@ namespace MockupAPI.Controllers
 {
     public class MethodController : Controller
     {
-        private readonly IPostMethod _postMethod;
-        public MethodController(IPostMethod postMethod)
+        private readonly IMethod _Method;
+        public MethodController(IMethod Method)
         {
-            _postMethod = postMethod;
+            _Method = Method;
         }
         
         [Route("PostMethod")]
         [HttpPost]
         public object CallPostMethod(string? methodName, string? output, int? httpReturn)
-            => _postMethod.MethodIsCalled(output, httpReturn);    
+            => _Method.MethodIsCalled(output, httpReturn);    
 
         [Route("GetMethod")]
         [HttpGet]
         public object CallGetMethod(string? methodName, string? output, int? httpReturn)
-            => _postMethod.MethodIsCalled(output, httpReturn);    
+            => _Method.MethodIsCalled(output, httpReturn);    
     }
 }

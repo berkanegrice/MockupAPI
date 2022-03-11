@@ -5,7 +5,7 @@ using System.Net.Http;
 
 namespace MockupAPI.Services
 {
-    public class PostMethod : IPostMethod
+    public class Method : IMethod
     {
         public object MethodIsCalled(string? output, int? httpReturn){
 
@@ -25,16 +25,16 @@ namespace MockupAPI.Services
 
             /*
              * If parsed HttpStatusCode is not exist on HttpStatusCode, return 
-             * HttpVersionNotSupported.
+             * empty HttpResponseMessage.
              */
             return success
                 ? (success, new HttpResponseMessage(returnHttpStatusCode))
-                : (success, new HttpResponseMessage(HttpStatusCode.HttpVersionNotSupported));
+                : (success, new HttpResponseMessage());
         }
 
         public string ReturnJsonMethod(string output)
         {
-            // TODO : Add some logic to return coming JSON object.
+            // Are we need any implementation in here ?
             return output;
         }
     }
