@@ -15,11 +15,11 @@ namespace MockupAPI.Controllers
         [Route("PostMethod")]
         [HttpPost]
         public object CallPostMethod(string? methodName, string? output, int? httpReturn)
-            => _Method.MethodIsCalled(output, httpReturn);    
+            => _Method.Request(output, httpReturn);    
 
         [Route("GetMethod")]
         [HttpGet]
         public object CallGetMethod(string? methodName, string? output, int? httpReturn)
-            => _Method.MethodIsCalled(output, httpReturn);    
+            => _Method.Request(output, httpReturn);    
     }
 }

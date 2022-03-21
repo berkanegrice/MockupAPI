@@ -7,7 +7,7 @@ namespace MockupAPI.Services
 {
     public class Method : IMethod
     {
-        public object MethodIsCalled(string? output, int? httpReturn){
+        public object Request(string? output, int? httpReturn){
 
             if (!string.IsNullOrEmpty(output)) return ReturnJsonMethod(output);
             // ReSharper disable once PossibleInvalidOperationException
