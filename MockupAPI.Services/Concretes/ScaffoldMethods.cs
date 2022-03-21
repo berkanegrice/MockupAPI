@@ -17,15 +17,6 @@ namespace MockupAPI.Services
             // BasicHttpBinding binding = new BasicHttpBinding();
 
             dynamic obj = new DynamicClass(ReturnClassFields);
-            
-            // PropertyInfo[] propertyInfos;
-            // propertyInfos = obj.GetProperties(BindingFlags.Public | BindingFlags.Static);
-            
-            // var col = ReturnClassFields.Join(ReturnClassFieldValue, x => x, y => y, (x, y) => new {X = x, Y = y});
-            // foreach(var prop in propertyInfos)
-            // {
-            //     Console.WriteLine(prop.Name);
-            // }
 
             // TODO: accessing "obj" object at the runtime and set a new value.
         }
