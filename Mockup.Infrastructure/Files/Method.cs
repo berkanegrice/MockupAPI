@@ -1,16 +1,16 @@
 #nullable enable
+using Mockup.Application.Interfaces;
 using System;
 using System.Net;
 using System.Net.Http;
 
-namespace Mockup.Services
+namespace Mockup.Infrastructure.Files
 {
-    public class Method : IMethod
+    public class Method : IMethodFactory
     {
         public object Request(string? output, int? httpReturn){
 
             if (!string.IsNullOrEmpty(output)) return ReturnJsonMethod(output);
-            // ReSharper disable once PossibleInvalidOperationException
             else if (httpReturn != null)
             {
                 var (success, httpMessage) = ReturnHttpStatusResponse((int) httpReturn);
