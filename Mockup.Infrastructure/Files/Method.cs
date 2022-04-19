@@ -1,14 +1,19 @@
 #nullable enable
 using Mockup.Application.Interfaces;
+using Mockup.Domain.Entity;
 using System;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Mockup.Infrastructure.Files
 {
     public class Method : IMethodFactory
     {
-        public object Request(string? output, int? httpReturn){
+        public async Task<object> Request(Mockup.Domain.Entity.Endpoint endPoint){
+
+            var output = endPoint.Output;
+            var httpReturn = endPoint.HttpReturnCode;
 
             if (!string.IsNullOrEmpty(output)) return ReturnJsonMethod(output);
             else if (httpReturn != null)
@@ -36,6 +41,11 @@ namespace Mockup.Infrastructure.Files
         {
             // Are we need any implementation in here ?
             return output;
+        }
+
+        Task<object> IMethodFactory.Request(Endpoint endpoint)
+        {
+            throw new NotImplementedException();
         }
     }
 }

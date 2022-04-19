@@ -23,17 +23,5 @@ namespace Mockup.Web
             command.Request = Domain.Enums.RequestType.Get;
             return await Mediator.Send(command);
         }
-
-
-
-        //[Route("PostMethod")]
-        //[HttpPost]
-        //public object CallPostMethod(string? methodName, string? output, int? httpReturn)
-        //    => _Method.Request(output, httpReturn);    
-
-        //[Route("GetMethod")]
-        //[HttpGet]
-        //public object CallGetMethod(string? methodName, string? output, int? httpReturn)
-        //    => _Method.Request(output, httpReturn);    
     }
 }

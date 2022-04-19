@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mockup.Application
 {
-    class DependencyInjection
+    public class DependencyInjection
     {
     }
 }

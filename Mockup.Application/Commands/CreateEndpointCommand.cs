@@ -28,11 +28,11 @@ namespace Mockup.Application.Commands
             _mapper = mapper;
         }
 
-        public Task<object> Handle(CreateEndpointCommand request, CancellationToken cancellationToken)
+        public async Task<object> Handle(CreateEndpointCommand request, CancellationToken cancellationToken)
         {
             var model = _mapper.Map<Endpoint>(request);
 
-            throw new NotImplementedException;
+            return await Task.FromResult(_methodFactory.Request(model));
         }
     }
 }
