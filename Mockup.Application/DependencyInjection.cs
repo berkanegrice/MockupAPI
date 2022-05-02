@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
+using MediatR;
 
 namespace Mockup.Application
 {
-    public class DependencyInjection
+    public static class DependencyInjection
     {
+        public static IServiceCollection AddApplication(this IServiceCollection services)
+        {
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+            
+            return services;
+        }
     }
 }
