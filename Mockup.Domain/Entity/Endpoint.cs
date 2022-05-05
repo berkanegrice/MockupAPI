@@ -10,8 +10,8 @@ namespace Mockup.Domain.Entity
 {
     public class Endpoint
     {
-        public RequestType Request;
+        public RequestType RequestType { get; set; }
         public string? Output { get; set; }
-        public int? HttpReturnCode { get; set; }
+        public int HttpReturnCode { get; set; }
     }
 }

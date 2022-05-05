@@ -10,7 +10,7 @@ namespace Mockup.Infrastructure.Files
 {
     public class Method : IMethodFactory
     {
-        public async Task<object> Request(Mockup.Domain.Entity.Endpoint endPoint){
+        public object Request(Mockup.Domain.Entity.Endpoint endPoint){
 
             var output = endPoint.Output;
             var httpReturn = endPoint.HttpReturnCode;

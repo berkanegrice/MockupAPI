@@ -1,28 +1,32 @@
-﻿#nullable enable
-using MediatR;
-using System;
+﻿using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 using Mockup.Application.Interfaces;
-using Mockup.Domain.Enums;
 using Mockup.Domain.Entity;
 using AutoMapper;
+using Mockup.Domain.Enums;
 
 namespace Mockup.Application.Commands
 {
-    public class CreateEndpointCommand : IRequest<object>
+    public class EndpointCommand
     {
-        public RequestType Request { get; set; }
         public string? Output { get; set; }
         public int HttpReturnCode { get; set; }
     }
 
-    public class CreateEndpointCommandHandler : IRequestHandler<CreateEndpointCommand, object>
+    public class CreateEndpointCommand : IRequest<object>
+    {
+        public RequestType RequestType { get; set; }
+        public string? Output { get; set; }
+        public int HttpReturnCode { get; set; }
+    }
+    
+    public class EndpointCommandHandler : IRequestHandler<CreateEndpointCommand, object>
     {
         private readonly IMethodFactory _methodFactory;
         private readonly IMapper _mapper;
 
-        public CreateEndpointCommandHandler(IMethodFactory methodFactory, IMapper mapper)
+        public EndpointCommandHandler(IMethodFactory methodFactory, IMapper mapper)
         {
             _methodFactory = methodFactory;
             _mapper = mapper;
