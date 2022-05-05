@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Mockup.Application.Interfaces;
 using Mockup.Domain.Entity;
 using AutoMapper;
+using Mockup.Application.Mappings;
 using Mockup.Domain.Enums;
 
 namespace Mockup.Application.Commands
@@ -11,22 +12,27 @@ namespace Mockup.Application.Commands
     public class EndpointCommand
     {
         public string? Output { get; set; }
-        public int HttpReturnCode { get; set; }
+        public int? HttpReturnCode { get; set; }
     }
 
-    public class CreateEndpointCommand : IRequest<object>
+    public class CreateEndpointCommand : IRequest<object>, IMapFrom<CreateEndpointCommand>
     {
         public RequestType RequestType { get; set; }
         public string? Output { get; set; }
-        public int HttpReturnCode { get; set; }
+        public int? HttpReturnCode { get; set; }
+        
+        public void Mapping(Profile profile)
+        {
+            profile.CreateMap<Endpoint, CreateEndpointCommand>().ReverseMap();
+        }
     }
     
-    public class EndpointCommandHandler : IRequestHandler<CreateEndpointCommand, object>
+    public class CreateEndpointCommandHandler : IRequestHandler<CreateEndpointCommand, object>
     {
         private readonly IMethodFactory _methodFactory;
         private readonly IMapper _mapper;
 
-        public EndpointCommandHandler(IMethodFactory methodFactory, IMapper mapper)
+        public CreateEndpointCommandHandler(IMethodFactory methodFactory, IMapper mapper)
         {
             _methodFactory = methodFactory;
             _mapper = mapper;

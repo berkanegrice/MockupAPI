@@ -8,7 +8,7 @@ namespace Mockup.Web.Controllers
     public class MethodController : ApiControllerBase
     {
         [HttpPost]
-        public async Task<ActionResult<object>> CallPostMethod(EndpointCommand command)
+        public async Task<ActionResult<object>> CallPostMethod([FromBody] EndpointCommand command)
         {
             var createEndpoint = new CreateEndpointCommand()
             {
@@ -21,7 +21,7 @@ namespace Mockup.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<object>> CallGetMethod(EndpointCommand command)
+        public async Task<ActionResult<object>> CallGetMethod([FromQuery] EndpointCommand command)
         {
             var createEndpoint = new CreateEndpointCommand()
             {

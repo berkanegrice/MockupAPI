@@ -1,4 +1,3 @@
-#nullable enable
 using Mockup.Application.Interfaces;
 using Mockup.Domain.Entity;
 using System;
@@ -41,11 +40,6 @@ namespace Mockup.Infrastructure.Files
         {
             // Are we need any implementation in here ?
             return output;
-        }
-
-        Task<object> IMethodFactory.Request(Endpoint endpoint)
-        {
-            throw new NotImplementedException();
         }
     }
 }

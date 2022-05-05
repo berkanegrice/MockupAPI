@@ -1,10 +1,4 @@
-﻿#nullable enable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Mockup.Domain.Enums;
+﻿using Mockup.Domain.Enums;
 
 namespace Mockup.Domain.Entity
 {
@@ -12,6 +6,6 @@ namespace Mockup.Domain.Entity
     {
         public RequestType RequestType { get; set; }
         public string? Output { get; set; }
-        public int HttpReturnCode { get; set; }
+        public int? HttpReturnCode { get; set; }
     }
 }
