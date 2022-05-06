@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace MockupAPI
+namespace Mockup.Web
 {
     public static class Program
     {
